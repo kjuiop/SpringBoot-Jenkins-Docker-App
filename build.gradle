@@ -51,16 +51,11 @@ jib {
         tags = ['1.0']
     }
     container {
-        // 컨테이너가 기동됐을 때 최초 실행되는 명령
-        entrypoint = ['java', '-Dspring.profiles.active=test', '-jar', 'test-docker-spring-boot-0.0.1-SNAPSHOT.jar']
-        // mainClass = 'com.test.StartApplication'
-        // java 옵션
+        // entrypoint = ['java', '-Dspring.profiles.active=test', '-jar', 'test-docker-spring-boot-0.0.1-SNAPSHOT.jar']
+        mainClass = 'com.test.StartApplication'
         jvmFlags = ['-Xms512m', '-Xmx512m', '-Xdebug', '-XshowSettings:vm', '-XX:+UnlockExperimentalVMOptions', '-XX:+UseContainerSupport']
         ports = ['8080']
 
-        // --platform linux/amd64
-
-        // 환경변수 설정
         environment = [SPRING_OUTPUT_ANSI_ENABLED: "ALWAYS"]
         labels = [version:project.version, name:project.name, group:project.group]
 
