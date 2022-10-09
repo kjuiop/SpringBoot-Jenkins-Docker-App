@@ -42,7 +42,7 @@ jib {
     }
     container {
         // entrypoint = ['java', '-Dspring.profiles.active=test', '-jar', 'test-docker-spring-boot-0.0.1-SNAPSHOT.jar']
-        mainClass = 'com.gig.jenkins'
+        mainClass = 'com.gig.jenkins.Application'
         jvmFlags = ['-Xms512m', '-Xmx512m', '-Xdebug', '-XshowSettings:vm', '-XX:+UnlockExperimentalVMOptions', '-XX:+UseContainerSupport']
         ports = ['8080']
 
